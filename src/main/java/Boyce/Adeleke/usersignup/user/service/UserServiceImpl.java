@@ -4,7 +4,7 @@ import Boyce.Adeleke.usersignup.user.model.User;
 import Boyce.Adeleke.usersignup.user.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserServiceImp implements UserService{
+public class UserServiceImpl implements UserService{
     private UserRepo userRepo;
 
     @Autowired
