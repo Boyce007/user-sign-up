@@ -1,14 +1,12 @@
 package Boyce.Adeleke.usersignup.user.controllers;
 
-import Boyce.Adeleke.usersignup.user.Exceptions.UserCreationException;
+import Boyce.Adeleke.usersignup.user.exceptions.UserCreationException;
+import Boyce.Adeleke.usersignup.user.exceptions.UserNotFoundException;
 import Boyce.Adeleke.usersignup.user.model.User;
 import Boyce.Adeleke.usersignup.user.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 
@@ -29,5 +27,9 @@ public class UserController {
     @PostMapping("/users")
     public User create(@RequestBody User user) throws UserCreationException {
         return userService.create(user);
+    }
+    @GetMapping("/users/{id}")
+    public User getById(@PathVariable("id") Long id) throws UserNotFoundException {
+        return userService.getUserById(id);
     }
 }
