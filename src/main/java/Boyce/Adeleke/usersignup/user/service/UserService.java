@@ -5,5 +5,6 @@ import Boyce.Adeleke.usersignup.user.model.User;
 
 public interface UserService {
     User create(User user) throws UserCreationException;
+    Iterable<User> getAllUsers;
 }
 
