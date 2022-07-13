@@ -1,10 +1,10 @@
 server:
   port: 8081
 spring:
-
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3308/User
+
     username: root
     password: clean-code
   jpa:
